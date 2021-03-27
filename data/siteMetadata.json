@@ -1,0 +1,16 @@
+{
+  "title": "Tim Corley's Web Portfolio & Blog",
+  "author": "Tim Corley",
+  "headerTitle": "Tim Corley",
+  "description": "Welcome! View some of my projects, read my blog post, and get in touch.",
+  "language": "en-us",
+  "siteUrl": "https://tim-corley.dev",
+  "siteRepo": "https://github.com/tim-corley/tc-portfolio",
+  "image": "/static/images/profile.png",
+  "socialBanner": "/static/images/twitter-card.png",
+  "email": "contact@tim-corley.dev",
+  "github": "https://github.com/tim-corley",
+  "twitter": "https://twitter.com/tcor215",
+  "linkedin": "https://www.linkedin.com/timcorley",
+  "locale": "en-US"
+}
