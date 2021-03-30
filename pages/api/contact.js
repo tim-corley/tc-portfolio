@@ -19,20 +19,30 @@ export default function Contact(req, res) {
   const mailOption = {
     from: `${email}`,
     to: `${process.env.MY_EMAIL}`,
-    subject: `New mail from ${email}`,
+    subject: `[PORTFOLIO SITE CONTACT] | New Message From: ${email}`,
+    replyTo: `${email}`,
     text: `
-    ${name} wrote:
-    ${message}
+    New Contact Form Submitted
+    -------
+     - EMAIL ADDRESS: ${email}
+     - NAME: ${name}
+     - MESSAGE: 
+     ${message}
     `,
   }
 
-  transporter.sendMail(mailOption, (err, data) => {
-    if (err) {
-      console.log(err)
-      res.send('error' + JSON.stringify(err))
-    } else {
-      console.log('mail send')
-      res.send('success')
-    }
+  // eslint-disable-next-line no-undef
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOption, (err, data) => {
+      if (err) {
+        console.log(err)
+        res.send('error' + JSON.stringify(err))
+        reject(err)
+      } else {
+        console.log('email successfully sent')
+        res.send('success')
+        resolve(data)
+      }
+    })
   })
 }

@@ -28,16 +28,15 @@ export default function ContactForm() {
       return
     }
 
-    console.log(`RESULT: ${result}`)
     setToken(result)
-    console.log(data)
 
     const { name, email, message } = data
+
+    setFormData(initialFormData)
 
     const res = await sendMail(name, email, message)
     if (res.status < 300) {
       console.log('SUCCESS!')
-      setFormData(initialFormData)
     } else {
       console.log('Fail!')
     }
@@ -66,6 +65,7 @@ export default function ContactForm() {
               onChange={handleChange}
               aria-label="Name Input"
               type="text"
+              value={formData.name}
               placeholder="Your Name"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
@@ -94,6 +94,7 @@ export default function ContactForm() {
               onChange={handleChange}
               aria-label="Email Input"
               type="text"
+              value={formData.email}
               placeholder="Your Email Address"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
@@ -118,6 +119,7 @@ export default function ContactForm() {
               ref={register({ required: true })}
               onChange={handleChange}
               aria-label="Message Input"
+              value={formData.message}
               placeholder="Your Message"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
