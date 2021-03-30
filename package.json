@@ -34,6 +34,7 @@
     "react-autosize-textarea": "^7.1.0",
     "react-dom": "16.13.1",
     "react-google-recaptcha-v3": "^1.8.0",
+    "react-hook-form": "^6.15.5",
     "reading-time": "1.2.1",
     "rehype-katex": "^4.0.0",
     "remark-autolink-headings": "6.0.1",
