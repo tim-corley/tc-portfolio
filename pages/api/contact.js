@@ -18,16 +18,17 @@ export default function Contact(req, res) {
 
   const mailOption = {
     from: `${email}`,
-    to: `${process.env.MY_EMAIL}`,
-    subject: `[PORTFOLIO SITE CONTACT] | New Message From: ${email}`,
+    to: `${myEmail}`,
+    subject: `💥 PORTFOLIO SITE | New Message From: ${email}`,
     replyTo: `${email}`,
     text: `
     New Contact Form Submitted
-    -------
+    ----------
      - EMAIL ADDRESS: ${email}
      - NAME: ${name}
      - MESSAGE: 
      ${message}
+    ----------
     `,
   }
 

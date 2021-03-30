@@ -6,8 +6,8 @@ export default function Contact() {
   return (
     <>
       <PageSeo
-        title={`About - ${siteMetadata.author}`}
-        description={`About me - ${siteMetadata.author}`}
+        title={`Contact | ${siteMetadata.author}`}
+        description={`Get in touch | ${siteMetadata.author}`}
         url={`${siteMetadata.siteUrl}/contact`}
       />
       <div className="divide-y">
