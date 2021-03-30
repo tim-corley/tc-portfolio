@@ -2,20 +2,45 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import TextareaAutosize from 'react-autosize-textarea'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import { sendMail } from '../lib/send-mail'
 
 export default function ContactForm() {
+  const initialFormData = { name: '', email: '', message: '' }
+  const [formData, setFormData] = useState(initialFormData)
   const [token, setToken] = useState('')
   const { executeRecaptcha } = useGoogleReCaptcha()
   const { register, handleSubmit, errors } = useForm()
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
 
   const onSubmit = async (data) => {
     if (!executeRecaptcha) {
       return
     }
     const result = await executeRecaptcha('contact')
+    if (!result) {
+      return
+    }
+
     console.log(`RESULT: ${result}`)
     setToken(result)
     console.log(data)
+
+    const { name, email, message } = data
+
+    const res = await sendMail(name, email, message)
+    if (res.status < 300) {
+      console.log('SUCCESS!')
+      setFormData(initialFormData)
+    } else {
+      console.log('Fail!')
+    }
   }
 
   return (
@@ -31,14 +56,24 @@ export default function ContactForm() {
             </label>
             <input
               name="name"
-              ref={register({ required: true })}
+              ref={register({
+                required: true,
+                minLength: {
+                  value: 2,
+                  message: 'Minimum length is 2',
+                },
+              })}
+              onChange={handleChange}
               aria-label="Name Input"
               type="text"
               placeholder="Your Name"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
-            {errors.name && (
+            {errors.name?.type === 'required' && (
               <p className="my-0 tracking-wide text-red-500 text-xs">Name is required</p>
+            )}
+            {errors.name?.type === 'minLength' && (
+              <p className="my-0 tracking-wide text-red-500 text-xs">Minimum lenght is 2</p>
             )}
           </div>
         </div>
@@ -49,14 +84,26 @@ export default function ContactForm() {
             </label>
             <input
               name="email"
-              ref={register({ required: true })}
+              ref={register({
+                required: true,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'This is not a recognized email format',
+                },
+              })}
+              onChange={handleChange}
               aria-label="Email Input"
-              type="email"
+              type="text"
               placeholder="Your Email Address"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
             />
-            {errors.email && (
-              <p className="tracking-wide text-red-500 text-xs">Email address is required</p>
+            {errors.email?.type === 'required' && (
+              <p className="my-0 tracking-wide text-red-500 text-xs">Email is required</p>
+            )}
+            {errors.email?.type === 'pattern' && (
+              <p className="my-0 tracking-wide text-red-500 text-xs">
+                Not a recognized email format
+              </p>
             )}
           </div>
         </div>
@@ -69,6 +116,7 @@ export default function ContactForm() {
               rows={3}
               name="message"
               ref={register({ required: true })}
+              onChange={handleChange}
               aria-label="Message Input"
               placeholder="Your Message"
               className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
