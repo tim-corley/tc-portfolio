@@ -22,6 +22,7 @@ module.exports = {
       },
       fontFamily: {
         quicksand: ['Quicksand', 'Courier', 'monospace'],
+        roboto: ['Roboto', 'Courier', 'monospace'],
       },
       colors: {
         blue: colors.lightBlue,
