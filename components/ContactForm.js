@@ -155,12 +155,12 @@ export default function ContactForm() {
     } else if (formStatus === 'sent') {
       return (
         <>
-          <h1 className="text-3xl font-quicksand tracking-normal">
+          <div className="py-4 mb-2 text-3xl font-bold font-quicksand leading-8 tracking-normal">
             Thanks! I'll get back to you soon.
-          </h1>
+          </div>
           <Link href="/">
-            <button className="inline px-4 py-2 text-2xl font-quicksand tracking-normal leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg shadow focus:outline-none focus:shadow-outline-blue hover:bg-blue-700 dark:hover:bg-blue-500">
-              Back to homepage
+            <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-quicksand tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">
+              Back to Homepage
             </button>
           </Link>
         </>
@@ -168,12 +168,13 @@ export default function ContactForm() {
     } else if (formStatus === 'error') {
       return (
         <>
-          <h1 className="text-3xl font-quicksand tracking-normal">
-            Oops! Somthing went wrong. Please try again or email me directly.
-          </h1>
+          <div className="py-4 mb-2 text-3xl font-bold font-quicksand leading-8 tracking-normal">
+            Oops! Somthing went wrong. Please try again or email me directly
+            (contact@tim-corley.dev)
+          </div>
           <Link href="/">
-            <button className="inline px-4 py-2 text-2xl font-bold font-quicksand tracking-normal leading-5 text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg shadow focus:outline-none focus:shadow-outline-blue hover:bg-blue-700 dark:hover:bg-blue-500">
-              Back to homepage
+            <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-quicksand tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">
+              Back to Homepage
             </button>
           </Link>
         </>
