@@ -3,6 +3,9 @@ const nodemailer = require('nodemailer')
 export default function Contact(req, res) {
   const { name, email, message } = req.body
   const myEmail = process.env.MY_EMAIL
+  const CLIENT_ID = process.env.MAILING_SERVICE_CLIENT_ID
+  const CLIENT_SECRET = process.env.MAILING_SERVICE_CLIENT_SECRET
+  const REFRESH_TOKEN = process.env.MAILING_SERVICE_REFRESH_TOKEN
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -11,8 +14,9 @@ export default function Contact(req, res) {
     auth: {
       type: 'OAuth2',
       user: myEmail,
-      serviceClient: process.env.GOOGLE_CLIENT_ID,
-      privateKey: process.env.GOOGLE_PRIVATE_KEY,
+      clientId: CLIENT_ID,
+      clientSecret: CLIENT_SECRET,
+      refreshToken: REFRESH_TOKEN,
     },
   })
 

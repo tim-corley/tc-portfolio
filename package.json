@@ -21,6 +21,7 @@
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
+    "googleapis": "^71.0.0",
     "gray-matter": "^4.0.2",
     "image-size": "0.9.3",
     "next": "10.0.9",
