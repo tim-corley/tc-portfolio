@@ -6,8 +6,6 @@ import Tag from '@/components/Tag'
 import siteMetdata from '@/data/siteMetadata'
 
 const editUrl = (fileName) => `${siteMetdata.siteRepo}/blob/master/data/blog/${fileName}`
-const discussUrl = (slug) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetdata.siteUrl}/blog/${slug}`)}`
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -64,12 +62,10 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-              <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
+              <div className="pt-10 pb-8 font-roboto prose dark:prose-dark max-w-none">
+                {children}
+              </div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug)} rel="nofollow">
-                  {'Discuss on Twitter'}
-                </Link>
-                {` • `}
                 <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
               </div>
             </div>
@@ -115,7 +111,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
               <div className="pt-4 xl:pt-8">
                 <Link
                   href="/blog"
-                  className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="font-quicksand text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
                 >
                   &larr; Back to the blog
                 </Link>

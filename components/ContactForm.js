@@ -70,7 +70,6 @@ export default function ContactForm() {
                   aria-label="Name Input"
                   type="text"
                   value={formData.name}
-                  placeholder="Your Name"
                   className="block w-full px-4 py-2 font-roboto text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
                 />
                 {errors.name?.type === 'required' && (
@@ -103,7 +102,6 @@ export default function ContactForm() {
                   aria-label="Email Input"
                   type="text"
                   value={formData.email}
-                  placeholder="Your Email Address"
                   className="block w-full px-4 py-2 font-roboto text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
                 />
                 {errors.email?.type === 'required' && (
@@ -130,7 +128,6 @@ export default function ContactForm() {
                   onChange={handleChange}
                   aria-label="Message Input"
                   value={formData.message}
-                  placeholder="Your Message"
                   className="block w-full px-4 py-2 font-roboto text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
                 />
                 {errors.message && (
