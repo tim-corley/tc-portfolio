@@ -3,7 +3,7 @@ import Link from '@/components/Link'
 import { useForm } from 'react-hook-form'
 import TextareaAutosize from 'react-autosize-textarea'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
-import { sendMail } from '../lib/send-mail'
+import axios from 'axios'
 
 export default function ContactForm() {
   const initialFormData = { name: '', email: '', message: '' }
@@ -19,6 +19,29 @@ export default function ContactForm() {
       ...prevState,
       [name]: value,
     }))
+  }
+
+  const sendMail = async (name, email, message) => {
+    const data = {
+      name,
+      email,
+      message,
+    }
+
+    try {
+      const res = await axios({
+        method: 'post',
+        url: '/api/contact',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data,
+      })
+      // console.log(res)
+      return res
+    } catch (error) {
+      return error
+    }
   }
 
   const onSubmit = async (data) => {
