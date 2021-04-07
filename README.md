@@ -17,6 +17,7 @@
 - Support for tags - each unique tag will be its own page
 - Projects page
 - SEO friendly with RSS feed, sitemaps and more!
+- Contact Page with STMP Support
 
 ## Development
 
