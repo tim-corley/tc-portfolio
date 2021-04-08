@@ -1,7 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import LightLogo from '@/data/logo-light.svg'
-import DarkLogo from '@/data/logo-dark.svg'
+import Logo from '@/data/Logo'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
@@ -19,7 +18,7 @@ const LayoutWrapper = ({ children }) => {
             <Link href="/" aria-label="Tim Corley's Web Portfolio and Blog">
               <div className="flex items-center justify-between">
                 <div className="mr-3">
-                  {theme == 'light' || undefined ? <LightLogo /> : <DarkLogo />}
+                  <Logo mode={theme} />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
                   <div className="hidden h-6 text-2xl font-quicksand font-semibold sm:block">
