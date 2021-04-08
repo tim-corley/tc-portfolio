@@ -1,85 +1,68 @@
-![header image](./public/static/images/twitter-card.png)
-# My Portfolio Site
+<!-- PROJECT HEADER -->
+<br />
+<p align="center">
+  <a href="https://www.tim-corley.dev">
+    <img src="./public/static/images/twitter-card.png" alt="Header Card">
+  </a>
 
-### Built with Next.js & Tailwind
+  <h1 align="center">My Web Portfolio & Blog Site</h1>
 
-## Features
+  <p align="center">
+    A place to browse my blog posts, check out my projects, and to get in touch.
+    <br />
+    <br />
+    <a href="https://github.com/tim-corley/tc-portfolio/issues">Report an Issue</a>
+  </p>
+    <div align="center">
+    <h3>Built With:<h3>
+      <a style="margin-right: 15px" href="https://nextjs.org/">
+    <img src="./public/static/images/nextjs-icon.svg" alt="NextJS Logo" width=60" height="60">
+  </a>
+    <a style="margin-left: 15px" href="https://tailwindcss.com/">
+    <img src="./public/static/images/tailwindcss-icon.svg" alt="Tailwind Logo" width="60" height="60">
+  </a>
+  </div>
+</p>
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+      <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This is the code for a public-facing website intended to showcase some of my work - including blog posts & projects - and to provide contact information. It was develop & deployed using modern web application technologies such as React, JSX, MDX, Serverside Rendering, and Git/GitHub. 
+### Features
 - Easy styling customization with [Tailwind 2.0](https://blog.tailwindcss.com/tailwindcss-v2)
-- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
-- Lightweight, 43kB first load JS, uses Preact in production build
+- Near perfect lighthouse score - [Lighthouse Audit Report](https://www.tim-corley.dev/audit)
+- Lightweight
 - Mobile-friendly view
 - Light and dark theme
 - [MDX - write JSX in markdown documents!](https://mdxjs.com/)
 - Server-side syntax highlighting with [rehype-prism](https://github.com/mapbox/rehype-prism)
 - Automatic image optimization via [next/image](https://nextjs.org/docs/basic-features/image-optimization)
 - Flexible data retrieval with [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
-- Support for tags - each unique tag will be its own page
-- Projects page
-- SEO friendly with RSS feed, sitemaps and more!
-- Contact Page with STMP Support
+- Contact form support via [nodemailer](https://nodemailer.com/about/)
+- Hosted by [Vercel](https://vercel.com/)
 
-## Development
+### Built With
 
-First, run the development server:
+* [Next.js](https://nextjs.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
 
-```bash
-npm start
-# or
-npm run dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- CONTACT -->
+## Contact
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Post
-
-### Frontmatter
-
-Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
-
-Currently 7 fields are supported.
-
-```
-title (required)
-date (required)
-tags (required, can be empty array)
-lastmod (optional)
-draft (optional)
-summary (optional)
-images (optional, if none provided defaults to socialBanner in siteMetadata config)
-```
-
-Here's an example of a post's frontmatter:
-
-```
----
-title: 'Introducing Tailwind Nexjs Starter Blog'
-date: '2021-01-12'
-lastmod: '2021-01-18'
-tags: ['next-js', 'tailwind', 'guide']
-draft: false
-summary: 'Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.'
-images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
----
-```
-
-### Compose
-
-`scripts/compose.js` can be used to easily generate a post with pre-filled front matter.
-
-The first argument is the name of the post and the second optional argument is the extension (default to .mdx)
-
-Example code to generate the post called "My First Post" in markdown format
-
-```
-node ./scripts/compose.js "My First Post" .md
-```
-
-This will generate `./data/blog/my-first-post.md` with pre-filled front matter.
-
-## Deploy
-
-**Vercel**  
-The easiest way to deploy the template is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tim Corley | [@tcor215](https://twitter.com/tcor215) | contact@tim-corley.dev
