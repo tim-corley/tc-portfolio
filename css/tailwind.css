@@ -51,3 +51,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+.grecaptcha-badge {
+  opacity: 0;
+}
+
+.content-container {
+  height: calc(100vh - 145px);
+}
