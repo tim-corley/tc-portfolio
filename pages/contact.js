@@ -1,3 +1,4 @@
+import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import { PageSeo } from '@/components/SEO'
 import ContactForm from '@/components/ContactForm'
@@ -44,6 +45,14 @@ export default function Contact() {
             <a href={siteMetadata.twitter} className="font-roboto text-gray-600 dark:text-gray-400">
               {siteMetadata.twitter}
             </a>
+            <div className="pt-4 xl:pt-8">
+              <Link
+                href={siteMetadata.resume}
+                className="font-quicksand text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                View Resume &rarr;
+              </Link>
+            </div>
           </div>
           <div className="pt-8 pb-8 ml-4 prose dark:prose-dark max-w-none xl:col-span-2">
             <ContactForm />

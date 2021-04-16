@@ -1,3 +1,4 @@
+import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import { PageSeo } from '@/components/SEO'
@@ -31,6 +32,14 @@ export default function About() {
               <SocialIcon kind="github" href={siteMetadata.github} />
               <SocialIcon kind="linkedin" href={siteMetadata.linkedin} />
               <SocialIcon kind="twitter" href={siteMetadata.twitter} />
+            </div>
+            <div className="pt-4 xl:pt-8">
+              <Link
+                href={siteMetadata.resume}
+                className="font-quicksand text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                View Resume &rarr;
+              </Link>
             </div>
           </div>
           <div className="pt-8 pb-8 prose font-roboto dark:prose-dark max-w-none xl:col-span-2">
