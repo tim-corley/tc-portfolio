@@ -2,7 +2,7 @@
 title: Simplify Development with Docker-Compose
 date: '2021-04-30'
 tags: ['development', 'devops', 'docker']
-draft: true
+draft: false
 summary: 'Spin-up a development evironment with a single command'
 images: []
 ---
