@@ -61,7 +61,7 @@ This is the code for a public-facing website intended to showcase some of my wor
 * [Next.js](https://nextjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 
-### Create New Blog Post
+### Create New Post
 ```
 ➜ node scripts/compose.js "My Latest Post Title" md   
 
