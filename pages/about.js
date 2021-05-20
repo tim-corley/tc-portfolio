@@ -44,20 +44,28 @@ export default function About() {
           </div>
           <div className="pt-8 pb-8 prose font-roboto dark:prose-dark max-w-none xl:col-span-2">
             <p>
-              Morbi sit amet erat magna. Quisque gravida tempor venenatis. Mauris sed lacinia mi,
-              quis euismod nisi. Donec vulputate lacus sed eros varius eleifend. Suspendisse
-              potenti. Suspendisse nibh arcu, dignissim non pulvinar id, dapibus eget lectus.
+              I am primarily intertested in using technology to build things. Crafting delightful,
+              smart, beautiful web products offers endless opportunities to learn, to plan, to piece
+              puzzles together, to troubleshoot, and to strengthen skills - this is what drives me.
             </p>
             <p>
-              Maecenas ultrices neque pulvinar imperdiet euismod. In accumsan fringilla purus, et
-              rhoncus magna semper vitae. Vivamus tincidunt eget sapien vitae blandit. Nulla id urna
-              lacinia, consectetur massa a, egestas felis.
+              Outside of QA & Web Development, I am into cooking, snowboarding, golfing, and going
+              to see live music.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique
-              placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem
-              nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-            </p>
+            <p>Core Skills</p>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Postgres</li>
+              <li>MongoDB</li>
+              <li>Git</li>
+              <li>Docker</li>
+              <li>GCP</li>
+            </ul>
           </div>
         </div>
       </div>
