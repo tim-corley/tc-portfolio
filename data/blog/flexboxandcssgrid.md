@@ -1,0 +1,10 @@
+---
+title: Flexbox and CSS Grid
+date: '2021-06-04'
+tags: ['css', 'styling', 'flexbox', 'grid']
+draft: true
+summary: An overview of Flexbox and CSS Grid principles with some practical examples.
+images: []
+---
+
+Getting Flexbox and CSS Grid layouts to behave as intended can often be a bit tricky because of all of the moving parts under the hood. However, over time, I've found that sticking to several patterns helps with creating correct layouts and reducing frustration. This post will outline some common Flexbox and CSS Grid exmaples that can be implemented in just about any frontend project.
