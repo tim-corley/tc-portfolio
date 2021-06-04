@@ -7,6 +7,112 @@ summary: An overview of Flexbox and CSS Grid principles with some practical exam
 images: []
 ---
 
-Getting Flexbox and CSS Grid layouts to behave as intended can often be a bit tricky because of all of the moving parts under the hood. However, over time, I've found that sticking to several patterns helps with creating correct layouts and reducing frustration. This post will outline some common Flexbox and CSS Grid exmaples that can be implemented in just about any frontend project.
+Getting Flexbox and CSS Grid layouts to behave as intended can often be a bit tricky because of all of the moving parts under the hood. However, over time, I've found that sticking to several patterns helps with creating proper layouts and reducing frustration. This post will outline some common Flexbox and CSS Grid examples that can be implemented in just about any frontend project.
+
+First, let's review to concepts and the goals of the Flexbox and Grid layouts...
+
+Flexbox is a one-dimensional layout system that is used to create a row or a column axis layout. Flexbox consists of (at least) two elements - a flex container and flex items (i.e. elements within the container). Once flex properties are applied on the items it is easier to control/manipulate things like alignment and flow.
+
+CSS Grid is a two-dimensional layout system that manipulates rows and columns together. In this regard, it is more powerful than Flexbox. Similiar to Flexbox though, a container is created and elements placed within.
+
+Both Flexbox and Grid provide developers with the means to create clean, appealing layouts. A key benefits of these systems though is responsiveness. If you're building with responsive design it mind, it is likely Flexbox and/or Grid will be needed.
+
+<hr />
+
+# Flexbox
+
+## Stretch All w/ Fixed Spacing
+
+<Image
+  src="/static/images/flex_01.png"
+  alt="Diagram of flexbox with fix-spaced, evenly stretched items"
+  width={719}
+  height={142}
+/>
+
+A very basic flexbox pattern is to have a container with several boxes that evenly fill the width.
+
+```html
+<div class="container">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
+
+```css
+.container {
+  display: flex;
+  padding: 0.25rem;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+}
+
+.item {
+  flex-grow: 1;
+  height: 100px;
+  border-radius: 5px;
+  border: 2px solid #fca311;
+  background-color: #14213d;
+}
+
+.item + .item {
+  margin-left: 4%;
+}
+```
+
+Note that a `flex-direction` property with a value of `column` could be added to the `container` selector to covert this layout from a row to a column (by default, flex with be a row). Also note that a `margin-left` is being applied here to all items except for the 1<sup>st</sup>.
 
 <EmbedCodepen hash="WNpzmvo" user="tim-corley" />
+
+## Stretch Middle w/ Fixed Spacing
+
+<Image
+  src="/static/images/flex_02.png"
+  alt="Diagram of flexbox with fix-spaced, middle item stretched"
+  width={719}
+  height={142}
+/>
+
+```html
+<div class="container">
+  <div class="item"></div>
+  <div class="item item-center"></div>
+  <div class="item"></div>
+</div>
+```
+
+```css
+.container {
+  display: flex;
+  padding: 0.25rem;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--border-radius);
+  border: var(--border);
+  background-color: var(--background-color);
+}
+
+.item-center {
+  flex-grow: 1;
+  border-radius: var(--border-radius);
+  border: var(--border);
+  background-color: var(--background-color);
+}
+
+.item + .item {
+  margin-left: 2%;
+}
+```
+
+<EmbedCodepen hash="LYWmPNz" user="tim-corley" />
+
+<hr />
+
+# Grid
