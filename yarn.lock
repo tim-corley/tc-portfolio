@@ -4846,7 +4846,7 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-prop-types@15.7.2, prop-types@^15.5.6, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.5.0, prop-types@^15.5.6, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5007,6 +5007,13 @@ react-autosize-textarea@^7.1.0:
     autosize "^4.0.2"
     line-height "^0.3.1"
     prop-types "^15.5.6"
+
+react-codepen-embed@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-codepen-embed/-/react-codepen-embed-1.0.2.tgz#3c112aeeb030c26ea42991195e353b50bbc9a789"
+  integrity sha512-yHIlU2yI/Pv+3Gx1zPn5ReuIRK9xa7uBQgwUNb6V/i26fOBtoIhgcU8iEJQ++s+T62DKHI+lKRtDg8GxGIfA4A==
+  dependencies:
+    prop-types "^15.5.0"
 
 react-codepen-prefill-embed@^0.0.2:
   version "0.0.2"

@@ -6,6 +6,7 @@ const MDXComponents = {
   Image,
   a: CustomLink,
   TestComponent: dynamic(() => import('./TestComponent')),
+  EmbedCodepen: dynamic(() => import('./EmbedCodepen')),
 }
 
 export default MDXComponents

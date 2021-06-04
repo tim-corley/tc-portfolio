@@ -33,6 +33,7 @@
     "preact": "^10.5.7",
     "react": "17.0.2",
     "react-autosize-textarea": "^7.1.0",
+    "react-codepen-embed": "^1.0.2",
     "react-codepen-prefill-embed": "^0.0.2",
     "react-dom": "16.13.1",
     "react-google-recaptcha-v3": "^1.8.0",
