@@ -68,7 +68,6 @@ This is the code for a public-facing website intended to showcase some of my wor
 ```
 
 
-<!-- CONTACT -->
+<!-- CONTACTS -->
 ## Contact
-
 Tim Corley | [@tcor215](https://twitter.com/tcor215) | contact@tim-corley.dev
