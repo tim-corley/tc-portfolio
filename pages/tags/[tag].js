@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+// import fs from 'fs'
+// import path from 'path'
 import { kebabCase } from '@/lib/utils'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
@@ -8,7 +8,7 @@ import ListLayout from '@/layouts/ListLayout'
 import { PageSeo } from '@/components/SEO'
 // import generateRss from '@/lib/generate-rss'
 
-const root = process.cwd()
+// const root = process.cwd()
 
 export async function getStaticPaths() {
   const tags = await getAllTags('blog')

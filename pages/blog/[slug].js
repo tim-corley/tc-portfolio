@@ -1,4 +1,4 @@
-import fs from 'fs'
+// import fs from 'fs'
 import { getFiles, getFileBySlug, getAllFilesFrontMatter, formatSlug } from '@/lib/mdx'
 import PostLayout from '@/layouts/PostLayout'
 import MDXComponents from '@/components/MDXComponents'
