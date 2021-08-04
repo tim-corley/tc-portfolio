@@ -17,9 +17,16 @@ const projectsData = [
   {
     title: 'React/Redux Weather App',
     description: `A frontend weather application built with TypeScript, React, Redux, and Tailwind that utilizes the OpenWeather API to fetch current conditions for a provided city.`,
-    imgSrc: '/static/images/react.svg',
+    imgSrc: '/static/images/redux.svg',
     code: 'https://github.com/tim-corley/react-weather-app',
     demo: 'https://react-weather-app-zeta.vercel.app/',
+  },
+  {
+    title: 'React/TypeScript Movie Trivia App',
+    description: `A frontend quiz application built with TypeScript, React, Styled-Components, and Tailwind that utilizes the Open Trivia Database API to fetch questions that will put your movie knowledge to the test.`,
+    imgSrc: '/static/images/typescript.svg',
+    code: 'https://github.com/tim-corley/react-ts-quiz-app',
+    demo: 'tim-corley.github.io/react-ts-quiz-app/',
   },
 ]
 
