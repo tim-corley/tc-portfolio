@@ -66,7 +66,7 @@ This is the code for a public-facing website intended to showcase some of my wor
 ➜ node scripts/compose.js "My Latest Post Title" md   
 
 ```
-
+<!-- DEV NOTES -->
 ### Local Development (with Docker)
 
 1. Create Image
