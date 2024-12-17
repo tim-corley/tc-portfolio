@@ -67,6 +67,17 @@ This is the code for a public-facing website intended to showcase some of my wor
 
 ```
 
+### Local Development (with Docker)
+
+1. Create Image
+```bash
+sudo docker build -t tc-portfolio .
+```
+2. Run Container (w/ Volumes)
+```bash
+sudo docker run -p 3005:3005 -v /app/node_modules -v .:/app tc-portfolio
+```
+
 
 <!-- CONTACTS -->
 ## Contact
