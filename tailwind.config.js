@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: {
+  content: {
     content: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js', './lib/**/*.js'],
     options: {
       safelist: ['type'], // [type='checkbox']
@@ -25,7 +25,7 @@ module.exports = {
         roboto: ['Roboto', 'Courier', 'monospace'],
       },
       colors: {
-        blue: colors.lightBlue,
+        blue: colors.sky,
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
