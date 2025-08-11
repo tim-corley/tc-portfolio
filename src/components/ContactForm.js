@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Link from '@/components/Link'
 import { useForm } from 'react-hook-form'
-import TextareaAutosize from 'react-autosize-textarea'
+import TextareaAutosize from 'react-textarea-autosize';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import axios from 'axios'
 
@@ -13,7 +13,7 @@ export default function ContactForm() {
   const [formStatus, setFormStatus] = useState('waiting')
   const [token, setToken] = useState('')
   const { executeRecaptcha } = useGoogleReCaptcha()
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, formState: { errors }, } = useForm()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -82,8 +82,7 @@ export default function ContactForm() {
                 Name
               </label>
               <input
-                name="name"
-                ref={register({
+                {...register("name", {
                   required: true,
                   minLength: {
                     value: 2,
@@ -114,8 +113,7 @@ export default function ContactForm() {
                 Email
               </label>
               <input
-                name="email"
-                ref={register({
+                {...register("email", {
                   required: true,
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -147,8 +145,7 @@ export default function ContactForm() {
               </label>
               <TextareaAutosize
                 rows={3}
-                name="message"
-                ref={register({ required: true })}
+                {...register("message", { required: true })}
                 onChange={handleChange}
                 aria-label="Message Input"
                 value={formData.message}
