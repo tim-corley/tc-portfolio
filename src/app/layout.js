@@ -1,6 +1,6 @@
 'use client'
 
-import '@/css/tailwind.css'
+import '@/app/globals.css'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'next-themes'
