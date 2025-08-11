@@ -3,8 +3,8 @@ import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSeo } from '@/components/SEO'
 
-export default function Blog() {
-  const posts = []
+export default async function Blog() {
+  const posts = await getAllFilesFrontMatter('blog')
   return (
     <>
       <PageSeo
