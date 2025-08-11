@@ -16,6 +16,11 @@
   src: local('Roboto'), url(../public/static/fonts/Roboto-Regular.ttf);
 }
 
+@theme {
+  --font-primary: var(--font-quicksand);
+  --font-secondary: var(--font-roboto)
+}
+
 /* @font-face {
   font-family: 'Roboto';
   font-style: bold;

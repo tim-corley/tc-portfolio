@@ -14,7 +14,7 @@ const LayoutWrapper = ({ children }) => {
   const { theme, setTheme } = useTheme()
   return (
     <SectionContainer>
-      <div className="flex flex-col justify-between h-screen">
+      <div className="flex flex-col justify-between h-screen font-primary">
         <header className="flex items-center justify-between py-10">
           <div>
             <Link href="/" aria-label="Tim Corley's Web Portfolio and Blog">

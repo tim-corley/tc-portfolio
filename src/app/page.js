@@ -25,20 +25,20 @@ export default async function Home() {
         url={siteMetadata.siteUrl}
       />
       <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-        <h1 className="font-quicksand font-extrabold leading-9 tracking-wider text-gray-900 dark:text-gray-100 text-4xl md:text-6xl mb-6">
+        <h1 className="font-primary font-extrabold leading-9 tracking-wider text-gray-900 dark:text-gray-100 text-4xl md:text-6xl mb-6">
           Welcome, I'm Tim.
         </h1>
-        <p className="text-xl font-roboto leading-7 lg:text-justify text-gray-600 dark:text-gray-400">
+        <p className="text-xl font-secondary leading-7 lg:text-justify text-gray-600 dark:text-gray-400">
           {siteMetadata.description}
         </p>
       </div>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="font-quicksand font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 text-4xl md:text-6xl">
+          <h1 className="font-primary font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 text-4xl md:text-6xl">
             Latest Posts
           </h1>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700 font-roboto">
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700 font-secondary">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
@@ -65,17 +65,17 @@ export default async function Home() {
                               {title}
                             </Link>
                           </h2>
-                          <div className="flex flex-wrap font-quicksand">
+                          <div className="flex flex-wrap font-primary">
                             {tags.map((tag) => (
                               <Tag key={tag} text={tag} />
                             ))}
                           </div>
                         </div>
-                        <div className="prose text-gray-600 max-w-none dark:text-gray-400 font-roboto">
+                        <div className="prose text-gray-600 max-w-none dark:text-gray-400 font-secondary">
                           {summary}
                         </div>
                       </div>
-                      <div className="text-base font-quicksand font-medium leading-6">
+                      <div className="text-base font-primary font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
                           className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
@@ -93,10 +93,10 @@ export default async function Home() {
         </ul>
       </div>
       {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-quicksand font-medium leading-6">
+        <div className="flex justify-end text-base font-primary font-medium leading-6">
           <Link
             href="/blog"
-            className="text-blue-500 font-quicksand hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-blue-500 font-primary hover:text-blue-600 dark:hover:text-blue-400"
             aria-label="all posts"
           >
             All Posts &rarr;

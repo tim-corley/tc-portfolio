@@ -11,9 +11,26 @@ import { SEO } from '@/components/SEO'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import MDXComponents from '@/components/MDXComponents'
 
+import localFont from "next/font/local";
+
+// Load the font
+const quicksand = localFont({
+  src: '../public/static/fonts/Quicksand-Regular.ttf',
+  variable: '--font-quicksand',
+  weight: '400', // optional
+  style: 'normal', // optional
+});
+
+const roboto = localFont({
+  src: '../public/static/fonts/Roboto-Regular.ttf',
+  variable: '--font-roboto',
+  weight: '400', // optional
+  style: 'normal', // optional
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${quicksand.variable} ${roboto.variable}`}>
       <Head>
         <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
         <link
@@ -24,7 +41,7 @@ export default function RootLayout({ children }) {
         />
         <link
           rel="icon"
-          type="image/png"
+          type="image/png"n
           sizes="16x16"
           href="/static/favicons/favicon-16x16.png"
         />
