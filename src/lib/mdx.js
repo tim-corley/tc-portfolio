@@ -24,7 +24,7 @@ const tokenClassNames = {
 }
 
 export async function getFiles(type) {
-  return fs.readdirSync(path.join(root, 'data', type))
+  return fs.readdirSync(path.join(root, 'src/data', type))
 }
 
 export function formatSlug(slug) {
@@ -60,12 +60,12 @@ export async function getFileBySlug(type, slug) {
 }
 
 export async function getAllFilesFrontMatter(type) {
-  const files = fs.readdirSync(path.join(root, 'data', type))
+  const files = fs.readdirSync(path.join(root, 'src/data', type))
 
   const allFrontMatter = []
 
   files.forEach((file) => {
-    const source = fs.readFileSync(path.join(root, 'data', type, file), 'utf8')
+    const source = fs.readFileSync(path.join(root, 'src/data', type, file), 'utf8')
     const { data } = matter(source)
     if (data.draft !== true) {
       allFrontMatter.push({ ...data, slug: formatSlug(file) })

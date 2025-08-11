@@ -1,103 +1,108 @@
-import Image from "next/image";
+import Link from '@/components/Link'
+import { PageSeo } from '@/components/SEO'
+import Tag from '@/components/Tag'
+import siteMetadata from '@/data/siteMetadata'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
-export default function Home() {
+const MAX_DISPLAY = 3
+const postDateTemplate = { year: 'numeric', month: 'long', day: 'numeric' }
+
+// export async function getStaticProps() {
+//   const posts = await getAllFilesFrontMatter('blog')
+
+//   return { props: { posts } }
+// }
+
+export default async function Home() {
+
+  const posts = await getAllFilesFrontMatter('blog')
+  
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <PageSeo
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+        url={siteMetadata.siteUrl}
+      />
+      <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+        <h1 className="font-quicksand font-extrabold leading-9 tracking-wider text-gray-900 dark:text-gray-100 text-4xl md:text-6xl mb-6">
+          Welcome, I'm Tim.
+        </h1>
+        <p className="text-xl font-roboto leading-7 lg:text-justify text-gray-600 dark:text-gray-400">
+          {siteMetadata.description}
+        </p>
+      </div>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+          <h1 className="font-quicksand font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 text-4xl md:text-6xl">
+            Latest Posts
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700 font-roboto">
+          {!posts.length && 'No posts found.'}
+          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+            const { slug, date, title, summary, tags } = frontMatter
+            return (
+              <li key={slug} className="py-12">
+                <article>
+                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
+                    <dl>
+                      <dt className="sr-only">Published on</dt>
+                      <dd className="text-base font-medium leading-6 text-gray-600 dark:text-gray-400">
+                        <time dateTime={date}>
+                          {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                        </time>
+                      </dd>
+                    </dl>
+                    <div className="space-y-5 xl:col-span-3">
+                      <div className="space-y-6">
+                        <div>
+                          <h2 className="text-2xl font-bold leading-8 tracking-wide">
+                            <Link
+                              href={`/blog/${slug}`}
+                              className="text-gray-900 dark:text-gray-100"
+                            >
+                              {title}
+                            </Link>
+                          </h2>
+                          <div className="flex flex-wrap font-quicksand">
+                            {tags.map((tag) => (
+                              <Tag key={tag} text={tag} />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="prose text-gray-600 max-w-none dark:text-gray-400 font-roboto">
+                          {summary}
+                        </div>
+                      </div>
+                      <div className="text-base font-quicksand font-medium leading-6">
+                        <Link
+                          href={`/blog/${slug}`}
+                          className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                          aria-label={`Read "${title}"`}
+                        >
+                          Read more &rarr;
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+      {posts.length > MAX_DISPLAY && (
+        <div className="flex justify-end text-base font-quicksand font-medium leading-6">
+          <Link
+            href="/blog"
+            className="text-blue-500 font-quicksand hover:text-blue-600 dark:hover:text-blue-400"
+            aria-label="all posts"
+          >
+            All Posts &rarr;
+          </Link>
+        </div>
+      )}
+    </>
+  )
 }

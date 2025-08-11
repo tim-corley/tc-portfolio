@@ -1,3 +1,5 @@
+'use client'
+
 import { NextSeo, ArticleJsonLd } from 'next-seo'
 import siteMetadata from '@/data/siteMetadata'
 
@@ -34,16 +36,18 @@ export const SEO = {
 
 export const PageSeo = ({ title, description, url }) => {
   return (
-    <NextSeo
-      title={`${title} – ${siteMetadata.title}`}
-      description={description}
-      canonical={url}
-      openGraph={{
-        url,
-        title,
-        description,
-      }}
-    />
+    <>
+      <NextSeo
+        title={`${title} – ${siteMetadata.title}`}
+        description={description}
+        canonical={url}
+        openGraph={{
+          url,
+          title,
+          description,
+        }}
+      />
+    </>
   )
 }
 
