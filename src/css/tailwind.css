@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: 'Quicksand';
+  src: local('Quicksand'), url(../public/static/fonts/Quicksand-Regular.ttf);
+}
+
+/* @font-face {
+  font-family: 'Quicksand';
+  font-style: bold;
+  src: local('Quicksand'), url(../public/static/fonts/Quicksand-Bold.ttf);
+} */
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(../public/static/fonts/Roboto-Regular.ttf);
+}
+
+/* @font-face {
+  font-family: 'Roboto';
+  font-style: bold;
+  src: local('Roboto'), url(../public/static/fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  src: local('Quicksand'), url(../public/static/fonts/Roboto-Italic.ttf);
+} */
+
+/* @font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(../public/static/fonts/Roboto-Thin.ttf);
+} */
+
+@tailwind utilities;
+
+.remark-code-title {
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t;
+}
+
+.remark-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}
+
+.task-list-item:before {
+  @apply hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.grecaptcha-badge {
+  opacity: 0;
+}
+
+.content-container {
+  height: calc(100vh - 145px);
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Tim Corley's Web Portfolio & Blog",
+  "author": "Tim Corley",
+  "headerTitle": "Tim Corley",
+  "description": "I am a Software Engineer focused on Quality Assurance & Web Development. I have nearly five years of professional experience as a Test Automation Engineer using Python, Selenium, and Appium. I am a constant learner who enjoys exploring technologies by building, breaking, and testing things. In addition to Python & Selenium, I've been focusing lately on React, TypeScript, GraphQL, Node.js, and Postgres. Please take a look around - check out some of my projects, browse my blog posts, and always feel free to get in touch.",
+  "language": "en-us",
+  "siteUrl": "https://tim-corley.dev",
+  "siteRepo": "https://github.com/tim-corley/tc-portfolio",
+  "image": "/static/images/profile.png",
+  "socialBanner": "/static/images/twitter-card.png",
+  "lighthouseAudit": "/lighthouse-20210408T121446.html",
+  "resume": "https://www.notion.so/Tim-Corley-87375440c37245c89a21a35137cf7738",
+  "email": "contact@tim-corley.dev",
+  "github": "https://github.com/tim-corley",
+  "twitter": "https://twitter.com/tcor215",
+  "linkedin": "https://www.linkedin.com/in/tim-corley/",
+  "locale": "en-US"
+}
