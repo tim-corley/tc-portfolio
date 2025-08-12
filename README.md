@@ -1,7 +1,49 @@
-# Portfolio Blog Starter
+<!-- PROJECT HEADER -->
+<br />
+<p align="center">
+  <a href="https://www.tim-corley.dev">
+    <img src="./public/static/images/twitter-card.png" alt="Header Card">
+  </a>
 
-This is a porfolio site template complete with a blog. Includes:
+  <h1 align="center">A Portfolio & Notes Website</h1>
 
+  <p align="center">
+    A place to browse my blog posts, check out my projects, and to get in touch.
+    <br />
+    <br />
+    <a href="https://github.com/tim-corley/tc-portfolio/issues">Report an Issue</a>
+  </p>
+    <div align="center">
+    <h3>Built With:<h3>
+      <a style="margin-right: 15px" href="https://nextjs.org/">
+    <img src="./public/static/images/nextjs-icon.svg" alt="NextJS Logo" width=60" height="60">
+  </a>
+    <a style="margin-left: 15px" href="https://tailwindcss.com/">
+    <img src="./public/static/images/tailwindcss-icon.svg" alt="Tailwind Logo" width="60" height="60">
+  </a>
+  </div>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+      <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This is the code for a public-facing website intended to showcase some of my work - including notes & projects - and to provide contact information. It was develop & deployed using modern web application technologies such as React, JSX, MDX, Serverside Rendering, Git/GitHub, and hosted via Vercel. 
+### Features
 - MDX and Markdown support
 - Optimized for SEO (sitemap, robots, JSON-LD schema)
 - RSS Feed
@@ -9,34 +51,21 @@ This is a porfolio site template complete with a blog. Includes:
 - Syntax highlighting
 - Tailwind v4
 - Vercel Speed Insights / Web Analytics
-- Geist font
+- Custom fonts (*coming soon*)
+- Contact form support via [nodemailer](https://nodemailer.com/about/) (*coming soon*)
+- Hosted by [Vercel](https://vercel.com/)
 
-## Demo
+### Built With
 
-https://portfolio-blog-starter.vercel.app
+* [Next.js](https://nextjs.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
 
-## How to Use
+### Create a New Note
+```
+➜ node scripts/compose.js "My Latest Post Title" md   
 
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
 ```
 
-Then, run Next.js in development mode:
-
-```bash
-pnpm dev
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+<!-- CONTACTS -->
+## Contact
+Tim Corley | [@tcor215](https://twitter.com/tcor215) | contact@tim-corley.dev
