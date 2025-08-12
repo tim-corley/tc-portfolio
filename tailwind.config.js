@@ -7,11 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-        fontFamily: {
-          quicksand: ['var(--font-quicksand)', 'sans-serif'],
-          roboto: ['var(--font-roboto)', 'sans-serif'],
+      fontFamily: {
+        title: ['var(--font-title)', 'sans-serif'],
+        body: ['var(--font-body)', 'sans-serif'],
       },
     },
   },
+  },
   plugins: [],
+  darkMode: 'class',
 };

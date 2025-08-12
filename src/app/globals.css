@@ -17,8 +17,8 @@
 }
 
 @theme {
-  --font-primary: var(--font-quicksand);
-  --font-secondary: var(--font-roboto)
+  --font-title: var(--font-title);
+  --font-body: var(--font-body)
 }
 
 /* @font-face {

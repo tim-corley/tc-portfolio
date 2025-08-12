@@ -13,37 +13,60 @@ import MDXComponents from '@/components/MDXComponents'
 
 import localFont from "next/font/local";
 
-// Load the font
+// // Load the font
+// const quicksand = localFont({
+//   src: '../public/static/fonts/Quicksand-Regular.ttf',
+//   variable: '--font-quicksand',
+//   weight: '400', // optional
+//   style: 'normal', // optional
+// });
+
+// const roboto = localFont({
+//   src: '../public/static/fonts/Roboto-Regular.ttf',
+//   variable: '--font-roboto',
+//   weight: '400', // optional
+//   style: 'normal', // optional
+// });
+
 const quicksand = localFont({
-  src: '../public/static/fonts/Quicksand-Regular.ttf',
-  variable: '--font-quicksand',
-  weight: '400', // optional
-  style: 'normal', // optional
+  src: [
+    { path: '../public/static/fonts/Quicksand-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../public/static/fonts/Quicksand-Bold.ttf', weight: '700', style: 'normal' },
+    { path: '../public/static/fonts/Quicksand-Light.ttf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-title',
+  display: 'swap',
 });
 
 const roboto = localFont({
-  src: '../public/static/fonts/Roboto-Regular.ttf',
-  variable: '--font-roboto',
-  weight: '400', // optional
-  style: 'normal', // optional
+  src: [
+    { path: '../public/static/fonts/Roboto-Thin.ttf', weight: '100', style: 'normal' },
+    { path: '../public/static/fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../public/static/fonts/Roboto-Bold.ttf', weight: '700', style: 'normal' },
+    { path: '../public/static/fonts/Roboto-Medium.ttf', weight: '400', style: 'normal' },
+    { path: '../public/static/fonts/Roboto-BoldItalic.ttf', weight: '700', style: 'italic' },
+    { path: '../public/static/fonts/Roboto-ThinItalic.ttf', weight: '400', style: 'italic' },
+  ],
+  variable: '--font-body',
+  display: 'swap',
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${quicksand.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${quicksand.variable} ${roboto.variable}`} suppressHydrationWarning>
       <Head>
-        <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="../public/static/favicons/apple-touch-icon.png" />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/static/favicons/favicon-32x32.png"
+          href="../public/static/favicons/favicon-32x32.png"
         />
         <link
           rel="icon"
-          type="image/png"n
+          type="image/png"
           sizes="16x16"
-          href="/static/favicons/favicon-16x16.png"
+          href="../public/static/favicons/favicon-16x16.png"
         />
         <link rel="manifest" href="/static/favicons/site.webmanifest" />
         <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" />
