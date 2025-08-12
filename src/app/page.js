@@ -26,7 +26,7 @@ export default async function Home() {
       />
       <div className="pt-6 pb-8 space-y-2 md:space-y-5">
         <h1 className="font-title font-extrabold leading-9 tracking-wider text-gray-900 dark:text-gray-100 text-4xl md:text-6xl mb-6">
-          Welcome, I'm Tim.
+          Welcome, I&apom Tim.
         </h1>
         <p className="text-xl font-body font-thin leading-7 lg:text-justify text-gray-600 dark:text-gray-400">
           {siteMetadata.description}

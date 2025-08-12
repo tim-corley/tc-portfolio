@@ -174,7 +174,7 @@ export default function ContactForm() {
     return (
       <>
         <div className="py-4 mb-2 text-3xl font-bold font-title leading-8 tracking-normal">
-          Thanks! I'll get back to you soon.
+          Thanks! I&apoll get back to you soon.
         </div>
         <Link href="/">
           <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-title tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">

@@ -1,7 +1,5 @@
-'use client'
-
 import '@/app/globals.css'
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
+// import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
 import { MDXProvider } from '@mdx-js/react'
 import { ThemeProvider } from 'next-themes'
 import { DefaultSeo } from 'next-seo'
@@ -128,7 +126,6 @@ export default function RootLayout({ children }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <body className="antialiased text-black bg-white dark:bg-gray-900 dark:text-white">
-        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}>
           <ThemeProvider attribute="data-theme">
             <MDXProvider components={MDXComponents}>
               <DefaultSeo {...SEO} />
@@ -137,7 +134,6 @@ export default function RootLayout({ children }) {
               </LayoutWrapper>
             </MDXProvider>
           </ThemeProvider>
-        </GoogleReCaptchaProvider>
       </body>
     </html>
   )
