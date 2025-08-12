@@ -1,9 +1,10 @@
+'use client';
+
 import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import { PageSeo } from '@/components/SEO'
 import Image from 'next/image'
-import profilePic from '@/public/static/images/profile.png'
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center pt-8 space-x-2">
-            <Image src={profilePic} alt="profile" width={192} height={192} className="w-48 h-48 rounded-full" />
+            <Image src={siteMetadata.image} alt="profile" width={192} height={192} className="w-48 h-48 rounded-full" />
             <h3 className="pt-4 pb-2 text-2xl font-title font-bold leading-8 tracking-normal">
               {siteMetadata.author}
             </h3>

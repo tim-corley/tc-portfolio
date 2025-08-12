@@ -1,7 +1,7 @@
-import Mail from './mail.svg'
-import Github from './github.svg'
-import Linkedin from './linkedin.svg'
-import Twitter from './twitter.svg'
+import Mail from '@/components/social-icons/mail.svg'
+import Github from '@/components/social-icons/github.svg'
+import Linkedin from '@/components/social-icons/linkedin.svg'
+import Twitter from '@/components/social-icons/twitter.svg'
 
 // Icons taken from: https://simpleicons.org/
 

@@ -8,7 +8,7 @@
   "siteRepo": "https://github.com/tim-corley/tc-portfolio",
   "image": "/static/images/profile.png",
   "socialBanner": "/static/images/twitter-card.png",
-  "lighthouseAudit": "public/lighthouse-20210408T121446.html",
+  "lighthouseAudit": "/lighthouse-20210408T121446.html",
   "resume": "https://www.notion.so/Tim-Corley-87375440c37245c89a21a35137cf7738",
   "email": "contact@tim-corley.dev",
   "github": "https://github.com/tim-corley",

@@ -30,9 +30,9 @@ import localFont from "next/font/local";
 
 const quicksand = localFont({
   src: [
-    { path: '../public/static/fonts/Quicksand-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../public/static/fonts/Quicksand-Bold.ttf', weight: '700', style: 'normal' },
-    { path: '../public/static/fonts/Quicksand-Light.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Quicksand-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Quicksand-Bold.ttf', weight: '700', style: 'normal' },
+    { path: './fonts/Quicksand-Light.ttf', weight: '400', style: 'normal' },
   ],
   variable: '--font-title',
   display: 'swap',
@@ -40,12 +40,12 @@ const quicksand = localFont({
 
 const roboto = localFont({
   src: [
-    { path: '../public/static/fonts/Roboto-Thin.ttf', weight: '100', style: 'normal' },
-    { path: '../public/static/fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../public/static/fonts/Roboto-Bold.ttf', weight: '700', style: 'normal' },
-    { path: '../public/static/fonts/Roboto-Medium.ttf', weight: '400', style: 'normal' },
-    { path: '../public/static/fonts/Roboto-BoldItalic.ttf', weight: '700', style: 'italic' },
-    { path: '../public/static/fonts/Roboto-ThinItalic.ttf', weight: '400', style: 'italic' },
+    { path: './fonts/Roboto-Thin.ttf', weight: '100', style: 'normal' },
+    { path: './fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Roboto-Bold.ttf', weight: '700', style: 'normal' },
+    { path: './fonts/Roboto-Medium.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Roboto-BoldItalic.ttf', weight: '700', style: 'italic' },
+    { path: './fonts/Roboto-ThinItalic.ttf', weight: '400', style: 'italic' },
   ],
   variable: '--font-body',
   display: 'swap',

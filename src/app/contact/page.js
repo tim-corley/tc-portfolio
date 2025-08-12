@@ -19,7 +19,7 @@ export default function Contact() {
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col pt-8 space-x-4">
-            <h3 className="pt-4 pb-2 ml-4 text-2xl font-title leading-8 tracking-normal">
+            <h3 className="pt-4 pb-2 text-2xl font-title leading-8 tracking-normal">
               EMAIL
             </h3>
             <a
