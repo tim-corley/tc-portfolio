@@ -1,2 +1,4 @@
+packages:
+  - 'app'
 ignoredBuiltDependencies:
   - '@vercel/speed-insights'
