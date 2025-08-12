@@ -43,7 +43,7 @@ export default function Blog({ post, prev, next }) {
           <MDXRemote {...mdxSource} components={MDXComponents} />
         </PostLayout>
       ) : (
-        <div className="mt-24 font-quicksand text-center">
+        <div className="mt-24 font-title text-center">
           <PageTitle>
             Under Construction{' '}
             <span role="img" aria-label="roadwork sign">

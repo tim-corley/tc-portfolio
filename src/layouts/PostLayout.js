@@ -22,7 +22,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
               <dl className="space-y-10">
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-quicksand font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <dd className="text-base font-title font-medium leading-6 text-gray-500 dark:text-gray-400">
                     <time dateTime={date}>
                       {new Date(date).toLocaleDateString(siteMetdata.locale, postDateTemplate)}
                     </time>
@@ -44,7 +44,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
                 <ul className="flex justify-center space-x-8 xl:block sm:space-x-12 xl:space-x-0 xl:space-y-8">
                   <li className="flex items-center space-x-2">
                     <img src={siteMetdata.image} alt="avatar" className="w-10 h-10 rounded-full" />
-                    <dl className="text-sm font-quicksand font-medium leading-5 whitespace-nowrap">
+                    <dl className="text-sm font-title font-medium leading-5 whitespace-nowrap">
                       <dt className="sr-only">Name</dt>
                       <dd className="text-gray-900 dark:text-gray-100">{siteMetdata.author}</dd>
                       <dt className="sr-only">Twitter</dt>
@@ -62,7 +62,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-              <div className="pt-10 pb-8 font-roboto prose dark:prose-dark max-w-none">
+              <div className="pt-10 pb-8 font-body prose dark:prose-dark max-w-none">
                 {children}
               </div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
@@ -70,7 +70,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
               </div>
             </div>
             <footer>
-              <div className="text-sm font-quicksand font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
+              <div className="text-sm font-title font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
                 {tags && (
                   <div className="py-4 xl:py-8">
                     <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
@@ -111,7 +111,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
               <div className="pt-4 xl:pt-8">
                 <Link
                   href="/blog"
-                  className="font-quicksand text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                  className="font-title text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
                 >
                   &larr; Back to the blog
                 </Link>

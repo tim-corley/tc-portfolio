@@ -13,42 +13,42 @@ export default function Contact() {
       />
       <div className="divide-y">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-quicksand font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-title font-extrabold leading-9 tracking-wide text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Contact
           </h1>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col pt-8 space-x-4">
-            <h3 className="pt-4 pb-2 ml-4 text-2xl font-quicksand leading-8 tracking-normal">
+            <h3 className="pt-4 pb-2 ml-4 text-2xl font-title leading-8 tracking-normal">
               EMAIL
             </h3>
             <a
               href={`mailto:${siteMetadata.email}`}
-              className="font-roboto text-gray-600 dark:text-gray-400"
+              className="font-body text-gray-600 dark:text-gray-400"
             >
               {siteMetadata.email}
             </a>
-            <h3 className="pt-4 pb-2 text-2xl font-quicksand leading-8 tracking-normal">GITHUB</h3>
-            <a href={siteMetadata.github} className="font-roboto text-gray-600 dark:text-gray-400">
+            <h3 className="pt-4 pb-2 text-2xl font-title leading-8 tracking-normal">GITHUB</h3>
+            <a href={siteMetadata.github} className="font-body text-gray-600 dark:text-gray-400">
               {siteMetadata.github}
             </a>
-            <h3 className="pt-4 pb-2 text-2xl font-quicksand leading-8 tracking-normal">
+            <h3 className="pt-4 pb-2 text-2xl font-title leading-8 tracking-normal">
               LINKEDIN
             </h3>
             <a
               href={siteMetadata.linkedin}
-              className="font-roboto text-gray-600 dark:text-gray-400"
+              className="font-body text-gray-600 dark:text-gray-400"
             >
               {siteMetadata.linkedin}
             </a>
-            <h3 className="pt-4 pb-2 text-2xl font-quicksand leading-8 tracking-normal">TWITTER</h3>
-            <a href={siteMetadata.twitter} className="font-roboto text-gray-600 dark:text-gray-400">
+            <h3 className="pt-4 pb-2 text-2xl font-title leading-8 tracking-normal">TWITTER</h3>
+            <a href={siteMetadata.twitter} className="font-body text-gray-600 dark:text-gray-400">
               {siteMetadata.twitter}
             </a>
             <div className="pt-4 xl:pt-8">
               <Link
                 href={siteMetadata.resume}
-                className="font-quicksand text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+                className="font-title text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
               >
                 View Resume &rarr;
               </Link>

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Custom dark variant targeting [data-theme="dark"] on root */
+@variant dark (&:where([data-theme="dark"] *));
+
 @font-face {
   font-family: 'Quicksand';
   src: local('Quicksand'), url(../public/static/fonts/Quicksand-Regular.ttf);

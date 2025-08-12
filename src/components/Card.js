@@ -24,7 +24,7 @@ const Card = ({ title, description, imgSrc, code, demo }) => (
         />
       )}
       <div className="p-6">
-        <h2 className="text-2xl font-quicksand font-bold leading-8 tracking-tight mb-3">
+        <h2 className="text-2xl font-title font-bold leading-8 tracking-tight mb-3">
           {code ? (
             <Link href={code} aria-label={`Link to ${title}`}>
               {title}
@@ -33,11 +33,11 @@ const Card = ({ title, description, imgSrc, code, demo }) => (
             title
           )}
         </h2>
-        <p className="prose text-gray-500 max-w-none dark:text-gray-400 mb-3">{description}</p>
+        <p className="font-body font-thin prose text-gray-500 max-w-none dark:text-gray-400 mb-3">{description}</p>
         {code && (
           <Link
             href={code}
-            className="text-base font-quicksand font-medium leading-6 text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-base font-title font-medium leading-6 text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
             aria-label={`Link to ${title}`}
           >
             Code &rarr;
@@ -46,7 +46,7 @@ const Card = ({ title, description, imgSrc, code, demo }) => (
         {demo && (
           <Link
             href={demo}
-            className="text-base font-quicksand font-medium leading-6 ml-6 text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
+            className="text-base font-title font-medium leading-6 ml-6 text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
             aria-label={`Link to ${title}`}
           >
             Demo &rarr;

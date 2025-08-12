@@ -72,13 +72,13 @@ export default function ContactForm() {
   if (formStatus === 'waiting') {
     return (
       <>
-        <div className="py-4 mb-2 text-3xl font-bold font-quicksand leading-8 tracking-normal">
+        <div className="py-4 mb-2 text-3xl font-bold font-title leading-8 tracking-normal">
           Get in touch...
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
-              <label htmlFor="name" className="text-2xl font-quicksand">
+              <label htmlFor="name" className="text-2xl font-title">
                 Name
               </label>
               <input
@@ -93,15 +93,15 @@ export default function ContactForm() {
                 aria-label="Name Input"
                 type="text"
                 value={formData.name}
-                className="block w-full px-4 py-2 font-roboto text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
+                className="block w-full px-4 py-2 font-body text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
               />
               {errors.name?.type === 'required' && (
-                <p className="my-0 tracking-wide font-roboto text-red-500 text-xs">
+                <p className="my-0 tracking-wide font-body text-red-500 text-xs">
                   Name is required
                 </p>
               )}
               {errors.name?.type === 'minLength' && (
-                <p className="my-0 tracking-wide font-roboto text-red-500 text-xs">
+                <p className="my-0 tracking-wide font-body text-red-500 text-xs">
                   Minimum lenght is 2
                 </p>
               )}
@@ -109,7 +109,7 @@ export default function ContactForm() {
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
-              <label htmlFor="name" className="text-2xl font-quicksand">
+              <label htmlFor="name" className="text-2xl font-title">
                 Email
               </label>
               <input
@@ -124,15 +124,15 @@ export default function ContactForm() {
                 aria-label="Email Input"
                 type="text"
                 value={formData.email}
-                className="block w-full px-4 py-2 font-roboto text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
+                className="block w-full px-4 py-2 font-body text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
               />
               {errors.email?.type === 'required' && (
-                <p className="my-0 tracking-wide font-roboto text-red-500 text-xs">
+                <p className="my-0 tracking-wide font-body text-red-500 text-xs">
                   Email is required
                 </p>
               )}
               {errors.email?.type === 'pattern' && (
-                <p className="my-0 tracking-wide font-roboto text-red-500 text-xs">
+                <p className="my-0 tracking-wide font-body text-red-500 text-xs">
                   Not a recognized email format
                 </p>
               )}
@@ -140,7 +140,7 @@ export default function ContactForm() {
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
-              <label htmlFor="name" className="text-2xl font-quicksand">
+              <label htmlFor="name" className="text-2xl font-title">
                 Message
               </label>
               <TextareaAutosize
@@ -149,10 +149,10 @@ export default function ContactForm() {
                 onChange={handleChange}
                 aria-label="Message Input"
                 value={formData.message}
-                className="block w-full px-4 py-2 font-roboto text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
+                className="block w-full px-4 py-2 font-body text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
               />
               {errors.message && (
-                <p className="tracking-wide font-roboto text-red-500 text-xs">
+                <p className="tracking-wide font-body text-red-500 text-xs">
                   A message is required
                 </p>
               )}
@@ -161,7 +161,7 @@ export default function ContactForm() {
 
           <div className="flex">
             <button
-              className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-quicksand tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg"
+              className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-title tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg"
               type="submit"
             >
               Send Message
@@ -173,11 +173,11 @@ export default function ContactForm() {
   } else if (formStatus === 'sent') {
     return (
       <>
-        <div className="py-4 mb-2 text-3xl font-bold font-quicksand leading-8 tracking-normal">
+        <div className="py-4 mb-2 text-3xl font-bold font-title leading-8 tracking-normal">
           Thanks! I'll get back to you soon.
         </div>
         <Link href="/">
-          <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-quicksand tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">
+          <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-title tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">
             Back to Homepage
           </button>
         </Link>
@@ -186,12 +186,12 @@ export default function ContactForm() {
   } else if (formStatus === 'error') {
     return (
       <>
-        <div className="py-4 mb-2 text-3xl font-bold font-quicksand leading-8 tracking-normal">
+        <div className="py-4 mb-2 text-3xl font-bold font-title leading-8 tracking-normal">
           Oops! Somthing went wrong. Please try again or email me directly
           (contact@tim-corley.dev)
         </div>
         <Link href="/">
-          <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-quicksand tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">
+          <button className="bg-blue-500 hover:bg-blue-600 dark:hover:bg-blue-400 text-white text-2xl font-title tracking-normal disabled:opacity-50 py-2 px-4 rounded-lg">
             Back to Homepage
           </button>
         </Link>
