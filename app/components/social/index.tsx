@@ -35,7 +35,7 @@ export default function SocialIcon({ kind, href, size = 8 }: SocialIconProps) {
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 ${sizeClasses}`}
+        className={`transition-transform transform hover:scale-110 fill-current text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 ${sizeClasses}`}
       />
     </a>
   )
