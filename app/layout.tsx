@@ -8,8 +8,11 @@ import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 
 const plexMono = IBM_Plex_Mono({
-  weight: '400',
+  variable: '--font-plex',
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
   subsets: ['latin'],
+  style: ['normal', 'italic'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -51,8 +54,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        plexMono.className,
-        'text-black bg-white dark:text-white dark:bg-black'
+        `${plexMono.variable}`,
+        'text-black bg-white dark:text-white dark:bg-black font-main'
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
