@@ -18,15 +18,26 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Tim\'s Website',
+    template: '%s | Tim\'s Website',
   },
-  description: 'This is my portfolio.',
+  icons: {
+    icon: [
+      { url: '/static/favicons/favicon.ico', sizes: 'any' }, // traditional favicon
+      { url: '/static/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/static/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/static/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    shortcut: ['/static/favicons/favicon.ico']
+  },
+  description: 'A portfolio and notes website',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Tim\'s Portfolio & Notes',
+    description: 'A portfolio and notes website',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Tim\'s Portfolio & Notes',
     locale: 'en_US',
     type: 'website',
   },
