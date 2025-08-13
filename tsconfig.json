@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],              // allows "@/..." for any file in root
-      "@/components/*": ["components/*"] // specifically for components
     },
     "incremental": true,
     "plugins": [

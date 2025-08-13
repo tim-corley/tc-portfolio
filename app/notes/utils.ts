@@ -3,7 +3,7 @@ import path from 'path'
 
 type Metadata = {
   title: string
-  publishedAt: string
+  updatedAt: string
   summary: string
   image?: string
 }
@@ -49,8 +49,8 @@ function getMDXData(dir) {
   })
 }
 
-export async function getBlogPosts() {
-  return await getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+export async function getNotes() {
+  return await getMDXData(path.join(process.cwd(), 'app', 'notes', 'files'))
 }
 
 export function formatDate(date: string, includeRelative = false) {

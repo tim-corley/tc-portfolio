@@ -1,17 +1,17 @@
-import { getBlogPosts } from 'app/blog/utils'
+import { getNotes } from '@/app/notes/utils'
 
 export const baseUrl = 'https://www.tim-corley.dev'
 
 export default async function sitemap() {
-  const blogs = (await getBlogPosts()).map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
+  const notes = (await getNotes()).map((note) => ({
+    url: `${baseUrl}/notes/${note.slug}`,
+    lastModified: note.metadata.updatedAt,
   }));
 
-  let routes = ['', '/blog'].map((route) => ({
+  let routes = ['', '/notes'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
-  return [...routes, ...blogs]
+  return [...routes, ...notes]
 }

@@ -1,12 +1,15 @@
+import { Notes } from 'app/components/notes'
+
 export const metadata = {
-  title: 'Notes',
-  description: 'Jot down stuff for reference.',
+  title: 'notes',
+  description: 'Read my notes.',
 }
 
-export default function Page() {
+export default function NotesPage() {
   return (
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Notes</h1>
+      <Notes />
     </section>
   )
 }

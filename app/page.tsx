@@ -1,9 +1,9 @@
-import { BlogPosts } from 'app/components/posts'
+import { Notes } from 'app/components/notes'
 
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-bold tracking-tighter">
+      <h1 className="mb-8 text-2xl font-bold tracking-wide">
         Tim's Website
       </h1>
       <p className="font-thin">IBM Plex Mono - Thin text. Does this look good?</p>
@@ -21,7 +21,7 @@ export default function Page() {
         gravida egestas. Proin euismod ullamcorper efficitur.`}
       </p>
       <div className="my-8">
-        <BlogPosts />
+        <Notes />
       </div>
     </section>
   )

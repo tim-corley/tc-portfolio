@@ -1,30 +1,30 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getNotes } from '@/app/notes/utils'
 import { baseUrl } from 'app/sitemap'
 
 export async function generateStaticParams() {
-  let posts = await getBlogPosts()
+  let notes = await getNotes()
 
-  return posts.map((post) => ({
-    slug: post.slug,
+  return notes.map((note) => ({
+    slug: note.slug,
   }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  let posts = await getBlogPosts()
-  let post = posts.find((post) => post.slug === slug)
-  if (!post) {
+  let notes = await getNotes()
+  let note = notes.find((note) => note.slug === slug)
+  if (!note) {
     return
   }
 
   let {
     title,
-    publishedAt: publishedTime,
+    updatedAt: updatedAt,
     summary: description,
     image,
-  } = post.metadata
+  } = note.metadata
   let ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       type: 'article',
-      publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      updatedAt,
+      url: `${baseUrl}/notes/${note.slug}`,
       images: [
         {
           url: ogImage,
@@ -53,12 +53,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
+export default async function notes({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  let posts = await getBlogPosts()
-  let post = posts.find((post) => post.slug === slug)
+  let notes = await getNotes()
+  let note = notes.find((note) => note.slug === slug)
 
-  if (!post) {
+  if (!note) {
     notFound()
   }
 
@@ -70,15 +70,15 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            '@type': 'notesnoteing',
+            headline: note.metadata.title,
+            datePublished: note.metadata.updatedAt,
+            dateModified: note.metadata.updatedAt,
+            description: note.metadata.summary,
+            image: note.metadata.image
+              ? `${baseUrl}${note.metadata.image}`
+              : `/og?title=${encodeURIComponent(note.metadata.title)}`,
+            url: `${baseUrl}/notes/${note.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',
@@ -87,15 +87,15 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
         }}
       />
       <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
+        {note.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
+          {formatDate(note.metadata.updatedAt)}
         </p>
       </div>
       <article className="prose">
-        <CustomMDX source={post.content} />
+        <CustomMDX source={note.content} />
       </article>
     </section>
   )

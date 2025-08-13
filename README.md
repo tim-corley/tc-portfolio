@@ -8,7 +8,7 @@
   <h1 align="center">A Portfolio & Notes Website</h1>
 
   <p align="center">
-    A place to browse my blog posts, check out my projects, and to get in touch.
+    A place to browse my notes, check out my projects, and to get in touch.
     <br />
     <br />
     <a href="https://github.com/tim-corley/tc-portfolio/issues">Report an Issue</a>
@@ -43,6 +43,7 @@
 ## About The Project
 
 This is the code for a public-facing website intended to showcase some of my work - including notes & projects - and to provide contact information. It was develop & deployed using modern web application technologies such as React, JSX, MDX, Serverside Rendering, Git/GitHub, and hosted via Vercel. 
+
 ### Features
 - MDX and Markdown support
 - Optimized for SEO (sitemap, robots, JSON-LD schema)
@@ -60,11 +61,6 @@ This is the code for a public-facing website intended to showcase some of my wor
 * [Next.js](https://nextjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 
-### Create a New Note
-```
-➜ node scripts/compose.js "My Latest Post Title" md   
-
-```
 
 <!-- CONTACTS -->
 ## Contact

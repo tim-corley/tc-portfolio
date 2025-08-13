@@ -1,4 +1,4 @@
-import SocialIcon from '@/components/social/index'
+import SocialIcon from '@/app/components/social/index'
 
 export const metadata = {
   title: 'About',

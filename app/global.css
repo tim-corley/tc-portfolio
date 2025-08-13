@@ -29,6 +29,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --logo-stroke: #000; /* light mode */
 }
 
 
@@ -39,6 +40,7 @@
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
+    --logo-stroke: #fff; /* dark mode */
   }
   html {
     color-scheme: dark;
