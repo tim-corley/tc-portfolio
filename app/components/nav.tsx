@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 import Logo from 'app/components/logo/Logo'
 
 const navItems = {
@@ -20,8 +23,10 @@ const navItems = {
 }
 
 export function Navbar() {
+  const cx = (...classes) => classes.filter(Boolean).join(' ')
+  const pathname = usePathname();
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
+    <aside className="ml-4 mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-center relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
@@ -36,7 +41,10 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                    className={cx(
+                    "transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1",
+                    pathname === path && "font-bold"
+                  )}
                 >
                   {name}
                 </Link>
