@@ -1,10 +1,16 @@
 import './global.css'
 import type { Metadata } from 'next'
+import { IBM_Plex_Mono } from 'next/font/google'
 import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+
+const plexMono = IBM_Plex_Mono({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -45,6 +51,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
+        plexMono.className,
         'text-black bg-white dark:text-white dark:bg-black'
       )}
     >
