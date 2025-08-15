@@ -1,0 +1,37 @@
+---
+title: 'Adding SSH Keys'
+updatedAt: '2025-08-15'
+summary: 'Steps the create & add new SSH keys'
+---
+
+## Log into a remote machine without typing in a password.
+
+1. Generate New SSH Key (if needed)
+```bash
+ssh-keygen -t ed25519 -C "email@example.com"
+```
+<br />
+2. Start SSH Agent & Add Key
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+<br />
+3. Copy Public Key to Remote Machine
+```bash
+ssh-copy-id -i ~/.ssh/id_ed25519.pub me@server-ip-address
+```
+<br />
+4. Streamline with a Config File
+   - Update (or Create): `~/.ssh/config`
+```
+Host remote-machine
+    HostName server-ip-address
+    User me
+    IdentityFile ~/.ssh/id_ed25519
+```
+<br />
+5. Test Connection (from Host)
+```bash
+ssh remote-machine
+```
