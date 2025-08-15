@@ -8,7 +8,7 @@ export const metadata = {
 export default function NotesPage() {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Notes</h1>
+      <h1 className="font-semibold text-2xl mb-8">Notes</h1>
       <Notes />
     </section>
   )

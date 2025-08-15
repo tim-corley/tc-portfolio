@@ -26,7 +26,7 @@ export function Navbar() {
   const cx = (...classes) => classes.filter(Boolean).join(' ')
   const pathname = usePathname();
   return (
-    <aside className="mb-16 tracking-tight">
+    <aside className="font-title mb-16">
       <div className="lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-center relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"

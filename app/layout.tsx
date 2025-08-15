@@ -1,6 +1,7 @@
 import './global.css'
 import type { Metadata } from 'next'
 import { IBM_Plex_Mono } from 'next/font/google'
+import localFont from 'next/font/local';
 import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -14,6 +15,16 @@ const plexMono = IBM_Plex_Mono({
   style: ['normal', 'italic'],
   display: 'swap',
 })
+
+const mozillaHeadline = localFont({
+  src: '../public/static/fonts/MozillaHeadline-VariableFont_wdth,wght.ttf',
+  variable: '--font-moz-headline',
+});
+
+const mozillaText = localFont({
+  src: '../public/static/fonts/MozillaText-VariableFont_wght.ttf',
+  variable: '--font-moz-text',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -65,8 +76,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        `${plexMono.variable}`,
-        'text-black bg-white dark:text-white dark:bg-black font-main h-full'
+        `${plexMono.variable}`, `${mozillaHeadline.variable}`, `${mozillaText.variable}`,
+        'text-black bg-white dark:text-white dark:bg-black font-body h-full'
       )}
     >
       <body className="antialiased max-w-xl mx-4 lg:mx-auto h-full">

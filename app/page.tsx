@@ -4,12 +4,12 @@ import { siteMetadata } from "@/data/siteMetadata";
 export default function HomePage() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-bold tracking-wide">
+      <h1 className="mb-8 text-2xl font-title font-semibold tracking-wider">
         Tim's Website
       </h1>
       <p className="mb-4">{siteMetadata.welcomemsg}</p>
       <div className="my-8">
-        <p className="font-extrabold mb-4">Recent Notes...</p>
+        <p className="text-xl font-title font-semibold mb-4">Recent Notes...</p>
         <Notes />
       </div>
     </section>

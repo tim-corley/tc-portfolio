@@ -2,6 +2,8 @@
 
 @theme {
   --font-main: var(--font-plex);
+  --font-title: var(--font-moz-headline);
+  --font-body: var(--font-moz-text);
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f5f5f5;
   --color-neutral-200: #e5e5e5;
